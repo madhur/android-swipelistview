@@ -328,7 +328,11 @@ public class SwipeListViewTouchListener implements View.OnTouchListener {
      * @param position Position of list
      */
     protected void closeAnimate(int position) {
-        closeAnimate(swipeListView.getChildAt(position - swipeListView.getFirstVisiblePosition()).findViewById(swipeFrontView), position);
+        //closeAnimate(swipeListView.getChildAt(position - swipeListView.getFirstVisiblePosition()).findViewById(swipeFrontView), position);
+        View view=swipeListView.getChildAt(position - swipeListView.getFirstVisiblePosition());
+ +      if(view != null){
+ +          closeAnimate(view.findViewById(swipeFrontView), position);
+ +      }
     }
 
     /**
